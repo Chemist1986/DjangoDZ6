@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Ordered Products{% endblock %}
+
+{% block content %}
+    <h1>Ordered Products</h1>
+
+    <!-- Отображение результатов -->
+    {% if ordered_products %}
+    <h2>Ordered Products for {{ selected_client.name }} in the last {{ time_period }} days:</h2>
+    <ul>
+        {% for product in ordered_products %}
+            <li>
+                <strong>{{ product.name }}</strong> - {{ product.description }}<br>
+                Price: ${{ product.price }}<br>
+                Quantity: {{ product.quantity }}
+            </li>
+            <hr>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'client_ordered_products' %}" class="btn btn-primary">Go Back</a>
+    {% else %}
+    <p>No ordered products found for the selected parameters.</p>
+    <a href="{% url 'select_parameters' %}" class="btn btn-primary">Go Back</a>
+    {% endif %}
+</div>
+{% endblock %}

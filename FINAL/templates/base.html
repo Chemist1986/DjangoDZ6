@@ -1,0 +1,19 @@
+<nav>
+    <ul class="menu">
+        <li><a href="{% url 'index' %}">Главная</a></li>
+        <li class="submenu">
+            <a href="#">Информация</a>
+            <ul class="submenu-content">
+                <li><a href="{% url 'about_client' %}">О клиенте</a></li>
+                <li><a href="{% url 'about_product' %}">О товаре</a></li>
+                <li><a href="{% url 'about_order' %}">О заказах</a></li>
+            </ul>
+        </li>
+        <li><a href="{% url 'client_list' %}">Список клиентов</a></li>
+        <li><a href="{% url 'product_list' %}">Список товаров</a></li>
+        <li><a href="{% url 'order_list' %}">Список заказов</a></li>
+        <li><a href="{% url 'create_client' %}">Создать клиента</a></li>
+        <li><a href="{% url 'create_product' %}">Создать товар</a></li>
+        <li><a href="{% url 'create_order' %}">Создать заказ</a></li>
+    </ul>
+</nav>
